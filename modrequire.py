@@ -18,7 +18,7 @@ def parsefile(path, outfile):
                 splitreq = match.group(2).split('.')
                 splitreq[-1] = splitreq[-1] + '.lua'
                 parsefile(os.path.join(basedir, *splitreq), outfile)
-                outfile.write('\nend)()')
+                outfile.write('\nend)() ' + split[1])
 
 
 with open(argv[2], 'w+') as outfile:
